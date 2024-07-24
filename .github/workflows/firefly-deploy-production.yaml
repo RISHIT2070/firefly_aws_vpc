@@ -37,6 +37,9 @@ jobs:
                 else
                   echo "apply=false" >> $GITHUB_OUTPUT
                 fi
+            - name: Configure AWS Profiles
+              run: |
+                aws configure --profile Terra_user_RIS set aws_access_key_id ${{ secrets.AKIAZGYBCSEIEY2UJ7VY }} && aws configure --profile Terra_user_RIS set aws_secret_access_key ${{ secrets.5cIeiCO/4KdybET18IBJDa98vQAHHU7Gz/FFIenY }} && aws configure --profile Terra_user_RIS set region ap-south-1
             - name: Setup Terraform
               uses: hashicorp/setup-terraform@v3
               with:
